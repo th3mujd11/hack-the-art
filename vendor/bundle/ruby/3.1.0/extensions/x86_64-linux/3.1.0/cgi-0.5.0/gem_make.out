@@ -1,0 +1,15 @@
+current directory: /home/coder/rails_projects/site-arte/arte-site/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20251113-3106-n53zkv.rb extconf.rb
+creating Makefile
+
+current directory: /home/coder/rails_projects/site-arte/arte-site/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= clean
+
+current directory: /home/coder/rails_projects/site-arte/arte-site/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\=
+compiling escape.c
+linking shared-object cgi/escape.so
+
+current directory: /home/coder/rails_projects/site-arte/arte-site/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20251113-3106-5v1f3d/cgi

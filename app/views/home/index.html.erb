@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HackTheART 2025 - Competiție de Informatică</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    /* Definirea culorii personalizate: un roșu-visiniu plăcut */
+    :root {
+      --bs-theme-color: #A31F34; /* Roșu-Visiniu */
+      --bs-theme-light: #C24256;
+      --bs-theme-lighter: #E07185;
+      --bs-theme-secondary: #6c757d;
+    }
+
+    /* Override pentru Bootstrap: schimbă culorile primare */
+    .bg-primary, .btn-primary, .text-primary, .border-primary, .navbar-dark.bg-primary {
+      background-color: var(--bs-theme-color) !important;
+    }
+
+    .btn-outline-primary {
+      color: var(--bs-theme-color);
+      border-color: var(--bs-theme-color);
+    }
+    .btn-outline-primary:hover {
+      background-color: var(--bs-theme-color);
+      border-color: var(--bs-theme-color);
+    }
+
+    .text-primary {
+      color: var(--bs-theme-color) !important;
+    }
+    
+    .border-primary {
+        border-color: var(--bs-theme-color) !important;
+    }
+
+    /* STIL PENTRU HEADER CU IMAGINE DE FUNDAL */
+    .header-background {
+      /* URL-ul imaginii de fundal */
+      background-image: url('https://picsum.photos/seed/techart/1600/900'); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Efect de parallax */
+      position: relative;
+    }
+
+    .header-background::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* Suprapunere semi-transparentă roșu-visiniu */
+      background-color: rgba(163, 31, 52, 0.85); 
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Adaptarea culorii pentru Securitate Cibernetică (Danger) */
+    .border-danger {
+        border-color: #dc3545 !important;
+    }
+    .text-danger {
+        color: #dc3545 !important;
+    }
+    .btn-outline-danger {
+      color: #dc3545;
+      border-color: #dc3545;
+    }
+    .btn-outline-danger:hover {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">HackTheART 2025</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#viziune"><i class="bi bi-yelp"></i> Viziune</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sectiuni"><i class="bi bi-journals"></i> Secțiuni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#date"><i class="bi bi-calendar-day"></i> Date Importante</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#inscriere"><i class="bi bi-box-arrow-in-right"></i> Înregistrare</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-background text-white text-center py-5 py-md-6 mb-5">
+    <div class="container py-5 header-content">
+      <h1 class="display-3 fw-bolder mb-3">HackTheART 2025</h1>
+      <p class="lead mb-4">Concurează în securitate cibernetică, programare și rețelistică.</p>
+      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+          <a href="#inscriere" class="btn btn-light btn-lg px-4 me-sm-3">Înregistrează-te Acum <i class="bi bi-arrow-right"></i></a>
+          <a href="#sectiuni" class="btn btn-outline-light btn-lg px-4"><i class="bi bi-three-dots"></i> Află mai Multe</a>
+      </div>
+      <div class="row justify-content-center mt-5">
+          
+          <div class="col-6 col-md-3 mb-3 mb-md-0">
+              <div class="bg-dark bg-opacity-25 rounded-3 p-3 h-100">
+                  <i class="bi bi-calendar-check fs-4 me-2"></i>
+                  <p class="d-inline-block fw-bold mb-0">Dec 14–15, 2025</p>
+                  <span class="d-block small opacity-75">Două zile de provocări</span>
+              </div>
+          </div>
+          
+          <div class="col-6 col-md-3 mb-3 mb-md-0">
+              <div class="bg-dark bg-opacity-25 rounded-3 p-3 h-100">
+                  <i class="bi bi-geo-alt fs-4 me-2"></i>
+                  <p class="d-inline-block fw-bold mb-0">Online</p>
+                  <span class="d-block small opacity-75">Participare din toată țara</span>
+              </div>
+          </div>
+          
+          <div class="col-6 col-md-3 mb-3 mb-md-0">
+              <div class="bg-dark bg-opacity-25 rounded-3 p-3 h-100">
+                  <i class="bi bi-list-columns-reverse fs-4 me-2"></i>
+                  <p class="d-inline-block fw-bold mb-0">3 Categorii</p>
+                  <span class="d-block small opacity-75">CTF, Programare, Rețelistică</span>
+              </div>
+          </div>
+      </div>    
+    </div>
+  </header>
+
+  <section id="viziune" class="container my-5 py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2">
+        
+<img src="/images/hack_the_art_logo.jpeg" class="img-fluid rounded-4 shadow-lg mb-4 mb-md-0 d-block mx-auto" style="max-width: 300px;" alt="Viziunea HackTheART">      </div>
+      <div class="col-md-6 order-md-1">
+        <h2 class="display-5 fw-bold mb-3 bg-danger rounded text-white text-center">Viziunea Noastră</h2>
+        <p class="lead text-secondary">
+          HackTheART este un proiect inițiat de un grup de liceeni dornici să-și împărtășească pasiunea pentru informatică și să creeze o platformă de învățare și competiție de nivel național.
+        </p>
+        <p>Ne concentrăm pe promovarea cunoștințelor practice și pe dezvoltarea unei comunități de pasionați, oferind provocări relevante pentru viitorul tech.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <section class="container my-5 py-5">
+    <h2 class="text-center display-5 fw-bold mb-5 text-danger">De Ce Să Concurezi?</h2>
+
+    <div class="row g-4 text-center">
+
+      <div class="col-12 col-md-6 col-lg-3">
+          <div class="card p-4 h-100 border-0 shadow-sm bg-light">
+              <div class="text-center mb-3">
+                  <i class="bi bi-code-slash fs-1"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Provocări Reale</h4>
+              <p class="text-muted">Rezolvă probleme complexe inspirate din scenarii de lucru din **lumea reală**.</p>
+          </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+          <div class="card p-4 h-100 border-0 shadow-sm bg-light">
+              <div class="text-center mb-3">
+                  <i class="bi bi-bullseye fs-1"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Niveluri Multiple</h4>
+              <p class="text-muted">Dificultate adaptată, de la **începători** la **experți** în fiecare secțiune.</p>
+          </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+          <div class="card p-4 h-100 border-0 shadow-sm bg-light">
+              <div class="text-center mb-3">
+                  <i class="bi bi-people fs-1"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Echipă & Individual</h4>
+              <p class="text-muted">Alege să concurezi **singur** sau să-ți formezi o **echipă** de succes (2-3 membri).</p>
+          </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+          <div class="card p-4 h-100 border-0 shadow-sm bg-light">
+              <div class="text-center mb-3">
+                  <i class="bi bi-award fs-1"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Recunoaștere & Premii</h4>
+              <p class="text-muted">Obține **premii**, **certificate** și recunoaștere în comunitatea IT.</p>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <section id="sectiuni" class="container my-5 py-5">
+    <h2 class="text-center fw-bold mb-3 text-white bg-danger rounded 
+              w-100 w-md-auto mx-auto px-3 py-2"
+        style="max-width: 400px;">
+      Secțiuni de Competiție
+    </h2>
+
+    <p class="text-center lead mb-5 text-secondary">Alege-ți categoria și demonstrează-ți expertiza.</p>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-danger border-4">
+          <div class="card-body p-4">
+            <h5 class="card-title fw-bold text-danger mb-3"><i class="bi bi-shield-lock-fill me-2"></i> Securitate Cibernetică – CTF</h5>
+            <p class="card-text">
+                O cursă contra cronometru. Rezolvă probleme din **PWN**, **OSINT**, **Reverse Engineering** și multe altele pentru a obține *flag*-ul.
+            </p>
+            <a href="#" class="btn btn-outline-danger mt-2 w-100">Înregistrează-te la CTF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-primary border-4 text-white">
+          <div class="card-body p-4">
+            <h5 class="card-title fw-bold mb-3"><i class="bi bi-code-slash me-2"></i> Programare Algoritmică</h5>
+            <p class="card-text">
+                Provocări de logică și optimizare. Demonstrează-ți abilitățile în algoritmi și structuri de date prin rezolvare rapidă.
+            </p>
+            <a href="#" class="btn btn-outline-light mt-2 w-100">Înregistrează-te la Programare</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-danger border-4">
+          <div class="card-body p-4">
+            <h5 class="card-title fw-bold text-danger mb-3"><i class="bi bi-diagram-3-fill me-2"></i> Rețelistică</h5>
+            <p class="card-text">
+                Testează-ți cunoștințele de **networking**, de la nivelul fizic la cel de aplicație. Configurare, depanare și arhitectură.
+            </p>
+            <a href="#" class="btn btn-outline-danger mt-2 w-100">Înregistrează-te la Rețelistică</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <section id="date" class="container my-5 py-5 bg-light rounded-4 shadow-sm">
+    <h2 class="text-center display-5 fw-bold mb-3 text-danger">Cronologia Competiției</h2>
+    <p class="text-center lead mb-5 text-secondary">Notează-ți în calendar și nu rata niciun eveniment!</p>
+
+    <div class="row g-4 text-center">
+
+      <div class="col-md-4">
+        <div class="card p-4 h-100 border-0 shadow">
+          <div class="bg-danger text-white rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px;"><i class="bi bi-person-plus-fill fs-3"></i></div>
+          <h5 class="fw-bold text-muted">Dec 1–13, 2025</h5>
+          <p class="text-muted">**Înscrieri Deschise** — Înregistrează-te și formează echipa. Nu uita să validezi contul!</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 h-100 border-0 shadow">
+          <div class="bg-danger text-white rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px;"><i class="bi bi-calendar-check-fill fs-3"></i></div>
+          <h5 class="fw-bold text-muted">Dec 14, 2025</h5>
+          <p class="text-muted">**Ziua 1 de Competiție** — Startul provocărilor CTF, Programare & Rețelistică.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 h-100 border-0 shadow">
+          <div class="bg-danger text-white rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px;"><i class="bi bi-trophy-fill fs-3"></i></div>
+          <h5 class="fw-bold text-muted">Dec 15, 2025</h5>
+          <p class="text-muted">**Finală + Premiere** — Runda finală, anunțarea câștigătorilor și festivitatea oficială.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="inscriere" class="container my-5 py-5">
+    <h2 class="fw-bold mb-5 bg-danger rounded text-white 
+              text-center 
+              w-100 w-md-auto mx-auto px-3 py-2"
+        style="max-width: 400px;">
+      Pregătit să Concurezi?
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-5">
+        <div class="card p-4 shadow-lg border-top border-5 border-primary h-100 text-center">
+          <h4 class="fw-bold text-white">Individual</h4>
+          <p class="lead text-white">Concurează singur, ai acces la toate provocările și obții un certificat personalizat.</p>
+          <a href="#" class="btn btn-outline-light btn-lg mt-3 w-100"><i class="bi bi-person-fill me-2"></i> Înregistrează-te Individual</a>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="card p-4 shadow-lg border-top border-5 border-danger h-100 text-center">
+          <h4 class="fw-bold text-danger">Echipă (2-3 membri)</h4>
+          <p class="lead text-danger">Concurezi în echipă, aveți provocări speciale și obțineți un certificat de echipă.</p>
+          <a href="#" class="btn btn-outline-danger btn-lg mt-3 w-100"><i class="bi bi-people-fill me-2"></i> Înregistrează-te ca Echipă</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center mt-4 fw-bold"><i class="bi bi-exclamation-triangle-fill me-1"></i> Înregistrările se închid pe 13 decembrie 2025. Nu rata!</p>
+  </section>
+
+  <footer class="bg-primary text-white text-center py-4 mt-5">
+    <div class="container fw-bold">
+      <p class="mb-1">&copy; 2025 HackTheART. Toate drepturile rezervate.</p>
+      <p class="small mb-0">Un proiect susținut de comunitatea locală de IT. | Site realizat de <i>Popa Andrei</i> & <i>Scurtescu Andrei</i>.</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
