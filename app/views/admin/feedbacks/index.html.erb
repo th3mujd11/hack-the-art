@@ -1,0 +1,64 @@
+  <style>
+    :root { --bs-theme-color:#A31F34; --bs-theme-light:#C24256; --bs-theme-lighter:#E07185; --bs-theme-secondary:#6c757d; }
+    .bg-primary,.btn-primary,.text-primary,.border-primary,.navbar-dark.bg-primary{ background-color:var(--bs-theme-color)!important; }
+    .btn-outline-primary{ color:var(--bs-theme-color); border-color:var(--bs-theme-color);} .btn-outline-primary:hover{ background-color:var(--bs-theme-color); border-color:var(--bs-theme-color); }
+    .text-primary{ color:var(--bs-theme-color)!important;} .border-primary{ border-color:var(--bs-theme-color)!important; }
+    .header-background{ background-image:url('https://picsum.photos/seed/techart/1600/900'); background-size:cover; background-position:center; background-attachment:fixed; position:relative; }
+    .header-background::before{ content:""; position:absolute; inset:0; background-color:rgba(163,31,52,.85); z-index:1; }
+    .header-content{ position:relative; z-index:2; }
+  </style>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">HackTheART 2025</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Acasă</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin/feedbacks">Admin Feedbacks</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-background text-white text-center py-5 mb-5">
+    <div class="container py-4 header-content">
+      <h1 class="display-5 fw-bolder mb-2">Moderație Feedback</h1>
+      <p class="lead mb-0">Vizualizare internă pentru admin.</p>
+    </div>
+  </header>
+
+  <!-- Hidden flag only visible in admin DOM -->
+  <meta name="hacktheart-flag" content="<%= @flag %>">
+  <div id="flag" style="display:none"><%= @flag %></div>
+
+  <div class="container mb-5">
+    <div class="card shadow-lg border-top border-5 border-danger">
+      <div class="card-body">
+        <h2 class="h4 fw-bold mb-3 text-danger">Feedback-uri (admin)</h2>
+        <% if @submissions.any? %>
+          <div class="list-group">
+            <% @submissions.reverse_each do |s| %>
+              <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1 text-danger fw-bold"><%= raw(naive_filter(s[:name])) %></h5>
+                  <small class="text-muted"><%= s[:created_at].strftime('%Y-%m-%d %H:%M') %></small>
+                </div>
+                <p class="mb-1"><%= h(s[:feedback]) %></p>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <p class="text-muted">Nu există încă feedback.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-primary text-white text-center py-4 mt-5">
+    <div class="container fw-bold">
+      <p class="mb-1">&copy; 2025 HackTheART. Admin</p>
+      <p class="small mb-0">Flag-ul este prezent în DOM doar pentru admin.</p>
+    </div>
+  </footer>
+

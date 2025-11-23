@@ -1,0 +1,18 @@
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-ygxqcj sitelibdir\=./.gem.20251123-413787-ygxqcj clean
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-ygxqcj sitelibdir\=./.gem.20251123-413787-ygxqcj
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-ygxqcj sitelibdir\=./.gem.20251123-413787-ygxqcj install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20251123-413787-ygxqcj/skiptrace/internal
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-ygxqcj sitelibdir\=./.gem.20251123-413787-ygxqcj clean
