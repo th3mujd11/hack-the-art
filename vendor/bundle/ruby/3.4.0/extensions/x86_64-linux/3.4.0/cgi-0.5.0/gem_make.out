@@ -1,0 +1,18 @@
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-xd7nk7 sitelibdir\=./.gem.20251123-413787-xd7nk7 clean
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-xd7nk7 sitelibdir\=./.gem.20251123-413787-xd7nk7
+compiling escape.c
+linking shared-object cgi/escape.so
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-xd7nk7 sitelibdir\=./.gem.20251123-413787-xd7nk7 install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20251123-413787-xd7nk7/cgi
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-xd7nk7 sitelibdir\=./.gem.20251123-413787-xd7nk7 clean

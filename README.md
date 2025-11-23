@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## How to run?
+ADMIN_TOKEN='secret' HACKTHEART_FLAG='HCS{real_flag}' bin/rails s -p 3000 -b 0.0.0.0

@@ -1,0 +1,100 @@
+  <style>
+    :root {
+      --bs-theme-color: #A31F34;
+      --bs-theme-light: #C24256;
+      --bs-theme-lighter: #E07185;
+      --bs-theme-secondary: #6c757d;
+    }
+
+    .bg-primary, .btn-primary, .text-primary, .border-primary, .navbar-dark.bg-primary {
+      background-color: var(--bs-theme-color) !important;
+    }
+
+    .btn-outline-primary { color: var(--bs-theme-color); border-color: var(--bs-theme-color); }
+    .btn-outline-primary:hover { background-color: var(--bs-theme-color); border-color: var(--bs-theme-color); }
+    .text-primary { color: var(--bs-theme-color) !important; }
+    .border-primary { border-color: var(--bs-theme-color) !important; }
+
+    .header-background {
+      background-image: url('https://picsum.photos/seed/techart/1600/900');
+      background-size: cover; background-position: center; background-attachment: fixed; position: relative;
+    }
+    .header-background::before { content: ""; position: absolute; inset: 0; background-color: rgba(163,31,52,0.85); z-index: 1; }
+    .header-content { position: relative; z-index: 2; }
+    .border-danger { border-color: #dc3545 !important; }
+    .text-danger { color: #dc3545 !important; }
+    .btn-outline-danger { color: #dc3545; border-color: #dc3545; }
+    .btn-outline-danger:hover { background-color: #dc3545; border-color: #dc3545; }
+  </style>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">HackTheART 2025</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/#viziune"><i class="bi bi-yelp"></i> Viziune</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#sectiuni"><i class="bi bi-journals"></i> Secțiuni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#date"><i class="bi bi-calendar-day"></i> Date Importante</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#inscriere"><i class="bi bi-box-arrow-in-right"></i> Înregistrare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/feedback"><i class="bi bi-chat-left-text"></i> Feedback</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-background text-white text-center py-5 mb-5">
+    <div class="container py-4 header-content">
+      <h1 class="display-5 fw-bolder mb-2">Feedback-ul tău contează</h1>
+      <p class="lead mb-0">Spune-ne ce părere ai despre HackTheART.</p>
+    </div>
+  </header>
+
+  <div class="container mb-5">
+    <% if flash[:notice] %>
+      <div class="alert alert-success shadow-sm"><%= flash[:notice] %></div>
+    <% end %>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-lg border-top border-5 border-primary">
+          <div class="card-body">
+            <h2 class="h4 fw-bold mb-3 text-primary">Trimite Feedback</h2>
+            <%= form_with url: feedback_path, method: :post, local: true do %>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nume echipă / competitor</label>
+                <%= text_field_tag :name, params[:name], id: "name", class: "form-control", placeholder: "ex: RedTeam" %>
+                <div class="form-text"></div>
+              </div>
+              <div class="mb-3">
+                <label for="feedback" class="form-label">Feedback</label>
+                <%= text_area_tag :feedback, params[:feedback], id: "feedback", rows: 5, class: "form-control", placeholder: "Scrie opinia ta aici..." %>
+              </div>
+              <div class="d-grid d-sm-flex gap-2">
+                <button type="submit" class="btn btn-primary">Trimite</button>
+                <a href="/feedback" class="btn btn-outline-secondary">Resetează</a>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-primary text-white text-center py-4 mt-5">
+    <div class="container fw-bold">
+      <p class="mb-1">&copy; 2025 HackTheART. Toate drepturile rezervate.</p>
+    </div>
+  </footer>

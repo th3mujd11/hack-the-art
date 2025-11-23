@@ -1,0 +1,19 @@
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+/usr/bin/ruby extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-u5biqc sitelibdir\=./.gem.20251123-413787-u5biqc clean
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-u5biqc sitelibdir\=./.gem.20251123-413787-u5biqc
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-u5biqc sitelibdir\=./.gem.20251123-413787-u5biqc install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20251123-413787-u5biqc
+
+current directory: /home/th3mujd11/gitrepos/hack-the-art/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251123-413787-u5biqc sitelibdir\=./.gem.20251123-413787-u5biqc clean
