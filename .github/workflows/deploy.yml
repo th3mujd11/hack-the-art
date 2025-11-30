@@ -1,0 +1,48 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+      - run: bundle exec rake test
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+      - name: Precompile assets
+        env:
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          HACKTHEART_FLAG: ${{ secrets.HACKTHEART_FLAG }}
+          RAILS_ENV: production
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
+        run: bundle exec rails assets:precompile
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/hack-the-art
+            git pull
+            bundle install --without development test
+            RAILS_ENV=production bundle exec rails db:migrate
+            RAILS_ENV=production bundle exec rails assets:precompile
+            sudo systemctl restart hack-the-art # or your restart command
